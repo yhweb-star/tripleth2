@@ -1,0 +1,2 @@
+module InTakesHelper
+end

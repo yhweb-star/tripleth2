@@ -1,0 +1,2 @@
+class InTakesController < ApplicationController
+end

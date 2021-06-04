@@ -1,0 +1,2 @@
+class OutTakesController < ApplicationController
+end
