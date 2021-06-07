@@ -1,0 +1,76 @@
+<%# ヘッダー  %>
+<header></header>
+<%# / ヘッダー %>
+
+<div class='contents'>
+<%# tweet内容表示 %>
+  <div class='article'>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <%= link_to '一覧に戻る','/tweets', class: "btn btn-info back-button" %>
+        </div>
+        <div class="col-sm delete-button">
+          <%# if user_signed_in? %>
+            <%# if current_user.id == @tweet.user_id %>
+              <%= link_to '削除','/tweets', class: "btn btn-danger", confirm: "削除しますか？" %>
+            <%# end %>
+          <%# end %>
+        </div>
+        <div class="col-sm">
+        </div>
+      </div>
+    </div>
+    <div class='tweet-image'>
+      <%= image_tag "sample.png", class:'tweet-pict', placeholder: "画像挿入できます" %>
+    </div>
+    <div class='tweet-box'>
+      <div class='tweet-content'>
+        <div class='tweet-header'>
+          <%=link_to 'tweet投稿者', '#', class: 'tweet-user'%>
+            <%# if tweet.user.image.attached? %>
+              <%#= image_tag tweet.user.image, class: "icon-pict" %>
+            <%# else %>
+              <%= image_tag 'sample.png', class:"icon-pict" %>
+            <%# end %>
+            <div class='tweet-date'>投稿日時 <%#= l tweet.created_at %></div>
+        </div>
+        <div class='tweet-main'>tweeeeeeeeeet</div>
+      </div>
+    </div>
+  </div>
+<%# / tweet内容表示 %>
+<%# コメント欄表示 %>
+  <div class='comment-box'>
+    <div class="comment-title">コメント一覧</div>
+    <div class="comment-content"> <%# コメント表示欄 %>
+      <%# @comments.each do |comment| %>
+        <div class="comment-header">
+          <div class='comment-contributor'><%= link_to 'ユーザー名', "#" %></div>
+          <div class='comment-contributor-image'>
+            <%# if comment.user.image.attached? %>
+              <%#= image_tag comment.user.image, class: "icon-pict" %>
+            <%# else %>
+              <%= image_tag 'sample.png', class:"icon-pict" %>
+            <%# end %>
+          </div>
+          <div class='comment-created-at'>投稿日時 <%#= l comment.created_at %></div>
+        </div>
+        <p>コメント<%#= simple_format(comment.text) %></p>
+      <%# end %>
+    </div> <%# / コメント表示欄 %>
+    <div class="comment-form"> <%# コメントフォーム %>
+    <%#= form_with model: [@tweet, @comment], url: "#", class: "comment-submit", local: true do |f| %>
+      <%#= render 'shared/error_messages', model: f.object %>
+      <%#= f.text_area :text, class: "comment-text", placeholder: "コメントする", rows: "2", required: true %>
+      <input type="text" placeholder="コメントする">
+      <%= link_to '送信', '#', class: "btn btn-info"%>
+    <%# end %>
+    </div> <%# / コメントフォーム %>
+  </div>
+<%# / コメント欄表示 %>
+</div>
+
+<%# フッター %>
+<footer></footer>
+<%# / フッター %>

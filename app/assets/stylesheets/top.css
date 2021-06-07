@@ -1,0 +1,222 @@
+/* トップページcss */
+.top {
+  background-color: #d3d3d3;
+  height: 80vh;
+  }
+  .catch-copy{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 30%;
+  }
+  .concept{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 35%;
+  font-size: 18px;
+  }
+  .btns{
+  margin-top: -1rem;
+  display: block;
+  position: relative;
+  }
+  .btn-service{
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+  /* box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19); */
+  border-bottom: solid 2px #b5b5b5;
+  }
+  .btn-service:hover{
+  color: #000000;
+  background: #c0c0c0;
+  }
+  .processbtn{
+  position: absolute;
+  top: 20vh;
+  left: 15%;
+  }
+  .trainingbtn{
+  position: absolute;
+  top: 10vh;
+  left: 35%;
+  }
+  .tweetbtn{
+  position: absolute; 
+  top: 10vh;
+  left: 60%;
+  }
+  .mealbtn{
+  position: absolute;
+  top: 20vh;
+  left: 80%;
+  }
+  .checksbtn{
+  position: absolute;
+  top: 30vh;
+  left: 15%;
+  }
+  .userbtn{
+  position: absolute;
+  top: 40vh;
+  left: 35%;
+  }
+  .in_takesbtn{
+  position: absolute;
+  top: 40vh;
+  left: 60%;
+  }
+  .out_takesbtn{
+  position: absolute;     
+  top: 30vh;
+  left: 80%;
+  }
+  
+  /* スマホ表示 */
+  @media (max-width: 599px){
+    .catch-copy{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    }
+    .concept{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 9%;
+    font-size: 10px;
+    }
+    .btn-service:hover{
+    color: #000000;
+    background: #c0c0c0;
+    }
+    .processbtn{
+    position: absolute;
+    top: 24vh;
+    left: 25%;
+    }
+    .trainingbtn{
+    position: absolute;
+    top: 24vh;
+    left: 60%;
+    }
+    .tweetbtn{
+    position: absolute; 
+    top: 38vh;
+    left: 25%;
+    }
+    .mealbtn{
+    position: absolute;
+    top: 38vh;
+    left: 60%;
+    }
+    .checksbtn{
+    position: absolute;
+    top: 41vh;
+    left: 25%;
+    }
+    .userbtn{
+    position: absolute;
+    top: 41vh;
+    left: 60%;
+    }
+    .in_takesbtn{
+    position: absolute;
+    top: 55vh;
+    left: 25%;
+    }
+    .out_takesbtn{
+    position: absolute;     
+    top: 55vh;
+    left: 60%;
+    }
+  }
+  
+  
+  /* スマホ表示 */
+  @media (max-height: 568px){
+    .catch-copy{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 4%;
+    }
+    .concept{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 8%;
+    font-size: 10px;
+    }
+    
+  .btn-service{
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    font-size: 10px;
+    font-weight: bold;
+    background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    /* box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19); */
+    border-bottom: solid 2px #b5b5b5;
+    }
+    .btn-service:hover{
+    color: #000000;
+    background: #c0c0c0;
+    }
+    .processbtn{
+    position: absolute;
+    top: 31vh;
+    left: 25%;
+    }
+    .trainingbtn{
+    position: absolute;
+    top: 31vh;
+    left: 60%;
+    }
+    .tweetbtn{
+    position: absolute; 
+    top: 44vh;
+    left: 25%;
+    }
+    .mealbtn{
+    position: absolute;
+    top: 44vh;
+    left: 60%;
+    }
+    .checksbtn{
+    position: absolute;
+    top: 37vh;
+    left: 25%;
+    }
+    .userbtn{
+    position: absolute;
+    top: 37vh;
+    left: 60%;
+    }
+    .in_takesbtn{
+    position: absolute;
+    top: 49vh;
+    left: 25%;
+    }
+    .out_takesbtn{
+    position: absolute;     
+    top: 49vh;
+    left: 60%;
+    }
+  }

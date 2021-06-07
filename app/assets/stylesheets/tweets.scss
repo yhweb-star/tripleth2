@@ -1,3 +1,172 @@
-// Place all the styles related to the tweets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// .header {
+//   height: 100px;
+//   color: white;
+//   background-color: #432;
+// }
+// .footer {
+//   height: 80px;
+//   background-color: #432;
+// }
+// tweet詳細ページ
+.contents{
+  display: flex;
+}
+// tweet詳細エリア
+.article{
+  width: 60vw;
+  padding: 10px;
+}
+.container{
+  margin-top: 10px;
+}
+// tweet削除ボタン
+.delete-button{
+  text-align: center;
+}
+// tweet画像
+.tweet-image{
+  height: 250px;
+  display: flex;
+  justify-content: center;
+}
+.tweet-pict{
+  height: 200px;
+  width: 200px;
+  border: 2px dotted black;
+  margin: auto;
+}
+// tweet表示エリア
+.tweet-box{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tweet-content{
+  width: 80%;
+  height: 350px;
+  border: 2px dotted black;
+  padding: 5px;
+}
+.tweet-header{
+  height: 40px;
+  border: 1px dotted gray;
+  padding: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  text-align: center;
+}
+// tweet,comment投稿者アイコン
+.icon-pict{
+  height: 22px;
+  width: 22px;
+  margin: 0 10px 0 5px;
+  border-radius: 100%;
+}
+// tweet本文
+.tweet-main{
+  height: calc(100% - 50px);
+  border: 1px dotted gray;
+  padding: 5px;
+  word-break: break-word;
+}
+// /tweet表示エリア
+// コメント表示エリア
+.comment-box{
+  width: 40vw;
+  height: 700px;
+  padding: 20px 10px;
+}
+.comment-title{
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.comment-content{
+  height: 550px;
+  width: 90%;
+  padding: 5px;
+  margin: 0 auto 10px;
+  border: 2px dotted black;
+}
+.comment-header{
+  display: flex;
+}
+// コメント投稿エリア
+.comment-form{
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px;
+  border: 2px dotted black;
+}
+// コメント入力エリア
+.comment-form input{
+  width: 80%;
+  margin-right: 5%;
+}
+
+
+
+// /コメント表示エリア
+// /tweet詳細ページ
+
+
+//****** 仮ヘッダーとフッター ******//
+// header{
+//   width: 100%;
+//   height: 120px;
+//   background-color: #ff98f2;
+// }
+
+// footer{
+//   width: 100%;
+//   height: 60px;
+//   background-color: #ff98f2;
+// }
+//********** ここまで **********//
+
+
+
+.post{
+  height: 100%;
+  width: 100%;
+}
+
+//===トップボタン===//
+.back-top-btn{
+  margin-top: 5rem;
+  margin-left: 5rem;
+}
+
+
+//.+.+.+ ここからフォーム +.+.+.//
+.tweet-form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.form-label{
+  display: block;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.input-box{
+  width: 45rem;
+  padding: 5px 10px;
+  margin-bottom: 3rem;
+}
+
+.tweet-text-box{
+  height: 12rem;
+  padding-top: 20px;
+  margin-top: 3rem;
+}
+
+.submit-end-btn{
+  margin-bottom: 80px;
+}

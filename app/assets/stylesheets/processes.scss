@@ -1,3 +1,163 @@
-// Place all the styles related to the processes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// .header {
+//   height: 100px;
+//   color: white;
+//   background-color: #432;
+// }
+// .footer {
+//   height: 80px;
+//   background-color: #432;
+// }
+.contents{
+  display: flex;
+}
+.article{
+  width: 60vw;
+  padding: 10px;
+}
+.container{
+  margin-top: 10px;
+}
+.delete-button{
+  height: 50px;
+  text-align: center;
+}
+.process-image{
+  height: 250px;
+  display: flex;
+  justify-content: center;
+}
+.process-pict{
+  height: 200px;
+  width: 200px;
+  border: 2px dotted black;
+  margin: auto;
+}
+.process-box{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.process-content{
+  width: 80%;
+  height: 350px;
+  border: 2px dotted black;
+  padding: 5px;
+}
+.process-header{
+  height: 40px;
+  border: 1px dotted gray;
+  padding: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  text-align: center;
+}
+.icon-pict{
+  height: 22px;
+  width: 22px;
+  margin: 0 10px 0 5px;
+  border-radius: 100%;
+}
+.process-title{
+  font-size: 20px;
+  height: 40px;
+  border: 1px dotted gray;
+  padding: 5px;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+.process-main{
+  height: calc(100% - 100px);
+  border: 1px dotted gray;
+  padding: 5px;
+  word-break: break-word;
+}
+.comment-box{
+  width: 40vw;
+  height: 700px;
+  padding: 20px 10px;
+}
+.comment-title{
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.comment-content{
+  height: 550px;
+  width: 90%;
+  padding: 5px;
+  margin: 0 auto 10px;
+  border: 2px dotted black;
+}
+.comment-header{
+  display: flex;
+}
+.comment-form{
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px;
+  border: 2px dotted black;
+}
+.comment-form input{
+  width: 80%;
+  margin-right: 5%;
+} 
+
+//****** 仮ヘッダーとフッター ******//
+// header{
+//   width: 100%;
+//   height: 120px;
+//   background-color: #ff98f2;
+// }
+
+// footer{
+//   width: 100%;
+//   height: 60px;
+//   background-color: #ff98f2;
+// }
+//********** ここまで **********//
+
+
+
+.post{
+  height: 100%;
+  width: 100%;
+}
+
+//===トップボタン===//
+.back-top-btn{
+  margin-top: 5rem;
+  margin-left: 5rem;
+}
+
+
+//.+.+.+ ここからフォーム +.+.+.//
+.processes-form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.form-label{
+  display: block;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.input-box{
+  width: 45rem;
+  padding: 5px 10px;
+  margin-bottom: 3rem;
+}
+
+.text-box{
+  height: 40rem;
+  padding-top: 20px;
+}
+
+.submit-end-btn{
+  margin-bottom: 80px;
+}

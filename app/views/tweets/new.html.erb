@@ -1,0 +1,34 @@
+<%###.*_*.### ツイート記事新規投稿ページ ###.*_*.###%>
+
+
+<%#`````` ヘッダー ```````#%>
+<header></header>
+<%#```` 後ほど置き換え ````#%>
+
+
+<div class="post post-tweet">
+
+  <%#----------- 一覧に戻るボタン
+    *リンク先仮置き*
+    *bootstrap仮置き* -----------#%>
+  <%= link_to "一覧に戻る", "#" ,class:"btn btn-primary back-top-btn" %>
+
+
+  <%#----------- 記事投稿フォーム 
+    ※モデル仮置き※
+    ※url仮置き※ --------------#%>
+  <%= form_with model:@hoge, url: "#", class: "tweet-form", local: true do |f| %>
+    <div class="post-tweet-text">
+        <%= f.label :ツイートする, class: "form-label"%>
+        <%= f.text_area :text, autofocus: true, class: "input-box tweet-text-box", placeholder: "今何してる？"%>
+    </div>
+
+    <%#--------- 投稿ボタン 
+    *bootstrap仮置き* ----------#%>
+    <div class="submit-button">
+      <%= f.submit "投稿する", class:"btn btn-primary submit-end-btn" %>
+    </div>  
+  <% end %>
+</div>
+
+<footer></footer>

@@ -1,0 +1,38 @@
+<%###.*_*.### トレーニング記事新規投稿ページ ###.*_*.###%>
+
+
+<%#`````` ヘッダー ```````#%>
+<header></header>
+<%#```` 後ほど置き換え ````#%>
+
+
+<div class="post post-training">
+
+  <%#----------- 一覧に戻るボタン
+    *リンク先仮置き*
+    *bootstrap仮置き* -----------#%>
+  <%= link_to "一覧に戻る", "#" ,class:"btn btn-primary back-top-btn" %>
+
+
+  <%#----------- 記事投稿フォーム 
+    ※モデル仮置き※
+    ※url仮置き※ --------------#%>
+  <%= form_with model:@hoge, url: "#", class: "training-form", local: true do |f| %>
+    <div class="post-training-title">
+      <%= f.label :タイトル, class: "form-label"%>
+      <%= f.text_field :title, autofocus: true, class: "input-box title-box", placeholder: "トレーニングメニューなどを記入"%>
+    </div>
+    <div class="post-training-text">
+        <%= f.label :本文, class: "form-label"%>
+        <%= f.text_area :text, autofocus: true, class: "input-box text-box", placeholder: "ここに本文を記入"%>
+    </div>
+
+    <%#--------- 投稿ボタン 
+    *bootstrap仮置き* ----------#%>
+    <div class="submit-button">
+      <%= f.submit "投稿する", class:"btn btn-primary submit-end-btn" %>
+    </div>  
+  <% end %>
+</div>
+
+<footer></footer>

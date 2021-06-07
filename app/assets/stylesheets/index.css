@@ -1,0 +1,59 @@
+/* 仮ヘッダー・フッター */
+/* header{
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  background-color: #31a9ee;
+  border-bottom: 3px solid #006DD9;
+  box-shadow:0 7px 10px 2px #aaaaaa;
+}
+
+footer{
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding:10px;
+  color: #000000;
+  background-color: lightcoral;
+} */
+
+ /* 仮ヘッダー・フッターここまで */
+
+ /* 投稿内容仮置き */
+
+ .content{
+  width: 100vh;
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: 15vw 15vw 15vw;
+  grid-template-rows: auto;
+  margin: 5px 5px 5px 5px;
+
+}
+
+.box_content{
+  width: 200px;
+  height: 200px;
+  border: 1px solid ;
+}
+
+/* 右下のボタン */
+
+.fixed_btn{
+  position: fixed;
+  bottom: 10px; 
+  right: 10px;
+  padding: 50px 40px;
+  background-color: orange;
+  border-radius: 20px
+}
+
+/* 以上コンフリクト回避のためindex.cssを新たに追加して記述 */
+
+/* 左上にユーザー名仮表示 */
+.test{
+  position: absolute;
+  margin-left: 50px;
+  font-size: x-large;
+}

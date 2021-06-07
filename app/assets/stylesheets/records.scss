@@ -1,3 +1,63 @@
-// Place all the styles related to the records controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.record-new{
+  display: flex;
+  height: 80vh;
+}
+
+.record-left{
+  width: 50%;
+  height: 100%;
+}
+
+.record-calendar{
+  height: 50%;
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.record-graph{
+  height: 50%;
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.record-right{
+  width: 50%;
+  height: 100%;
+}
+
+.record-title{
+  background-color: lightgoldenrodyellow;
+  margin: 30px auto;
+  width: 50%;
+  text-align: center;
+}
+
+.record-form{
+  padding: 10px;
+}
+
+.record-data{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px auto 30px;
+  width: 70%;
+  text-align: center;
+}
+
+.record-menu{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 30px auto;
+  width: 70%;
+  text-align: center;
+}
+
+.record-input{
+  border: 1px solid black;
+  padding: 5px;
+  margin: 30px auto 0px;
+  width: 50%;
+  text-align: center;
+}

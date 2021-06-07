@@ -1,3 +1,160 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+//****** 仮ヘッダーとフッター ******//
+// header{
+//   width: 100%;
+//   height: 120px;
+//   background-color: #ff98f2;
+// }
+
+// footer{
+//   width: 100%;
+//   height: 60px;
+//   background-color: #ff98f2;
+// }
+//********** ここまで **********//
+
+
+//---------- 全体のレイアウト -----------//
+.user-show-wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.user-show-left-contents{
+  width: 40%;
+  height: 100%;
+}
+
+.user-show-right-contents{
+  width: 60%;
+  height: 100%;
+}
+
+//-------- 左側のコンテンツ -------//
+
+// .*.*.* 編集ボタン *.*.*.//
+.to-user-edit-btn{
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+// .*.*.* ユーザー画像 *.*.*.//
+.user-information-image{
+  height: 200px;
+  width: 200px;
+  display: block;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+// .*.*.* ユーザー情報 *.*.*.//
+//--- 全体のテキスト ---//
+.user-inform-texts{
+  padding: 20px;
+  margin-top: 2rem;
+  letter-spacing: 2px;
+  line-height: 22px;
+  font-size: 17px;
+}
+
+//--- 目立たせたいテキスト ---//
+.user-inform-texts span{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+//--- 1行目 ---//
+.user-inform-texts p:nth-child(1){
+  text-align: center;
+  border-bottom: 1px dotted #5e5d5dde;
+  margin-bottom: 3rem;
+}
+
+//--- 2行目 ---//
+// 特殊文字
+.user-inform-texts p:nth-child(2)::before{
+  content:"\0ab";
+  font-size: 20px;
+}
+
+.user-inform-texts p:nth-child(2)::after{
+  content:"\0bb";
+  font-size: 20px;
+}
+
+//--- p要素に対しての ---//
+//--- デフォルトのbootstrapの値を上書き ---//
+.user-inform-texts p:nth-child(2){
+  margin-bottom: 10px;
+}
+
+//--- 3行目 ---//
+.user-inform-texts p:nth-child(3){
+  font-size: 15px;
+  color: rgb(53, 53, 53);
+  box-shadow: 0 0 3px #797171;
+  padding: 3px 7px;
+  margin-bottom: 4rem;
+}
+
+//--- 4行目 ---//
+.user-inform-texts p:nth-child(4) span{
+  color: #ff8080;
+}
+
+.user-inform-texts p:nth-child(4){
+  text-shadow: 0 0 4px #dabbbb;
+}
+
+//--- Font Awesome---//
+.fa-arrow-right{
+  padding: 0 30px;
+}
+
+//--- 5行目 ---//
+.user-inform-texts p:nth-child(5){
+  font-size: 15px;
+  color: rgb(53, 53, 53);
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+// .*.*.* records/index遷移ボタン *.*.*.//
+.to-records-index-btn{
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+
+//-------- 右側のコンテンツ -------//
+
+// .*.*.* ユーザー投稿一覧のコンテンツ選択ボタン *.*.*.//
+.select-btn{
+  width: 15%;
+  margin-top: 3rem;
+}
+
+.user-post-selector{
+  padding-left: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+// .*.*.* ユーザー投稿一覧 *.*.*.//
+.user-posts-wrapper{
+  width: 58vh;
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: 18vw 18vw 18vw;
+  grid-template-rows: 36vh 36vh;
+  margin: 2.3rem 0 5rem 4rem;
+  box-sizing: border-box;
+}
+
+.user-posts{
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}

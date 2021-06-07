@@ -1,0 +1,88 @@
+<%###.*_*.### トレーニング記事新規投稿ページ ###.*_*.###%>
+
+<%# Font Awesomeの読み込み %>
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+<%#`````` ヘッダー ```````#%>
+<header></header>
+<%#```` 後ほど置き換え ````#%>
+
+<div class="user-show-wrapper">
+<%#---------- 左側のコンテンツ ------------#%>
+  <div class="user-show-left-contents">
+  <%# /// users/edit遷移ボタン
+          パスは仮置き /// %>
+    <div class="to-user-edit-btn">
+      <%= link_to "編集する", "#" ,class:"btn btn-primary" %>
+    </div>
+
+    <div class="user-information">
+      <%# /// 仮画像 /// %>
+      <%= image_tag "148a400f-l.jpeg", class:"user-information-image" %>
+      
+      <div class="user-inform-texts">
+        <%# nickname仮置き %>
+        <p><span>うらやまのボス</span> さんのプロフィール</p>
+        <p>PR</p>
+        <%# PR仮置き %>
+        <p>ちょっとメタボってきたので、、さすがに痩せようと思い四苦八苦からの七転び八起き。春は曙ようよう白くなりゆく山際、ではなくがんばります！</p>
+        <%# weight, goal仮置き %>
+        <p>現在体重<span>63</span>kg<i class="fas fa-arrow-right"></i><%#-- 矢印のアイコン --%>
+        目標体重<span>57</span>kg</p>
+        <%# age / gender / area 仮置き %>
+        <p>40歳 / 男性 / 東京</p>
+      </div>
+    </div>
+
+    <%# /// records/index遷移ボタン
+            パスは仮置き /// %>
+    <div class="to-records-index-btn">
+      <%= link_to "ダイエット管理状況", "#" ,class:"btn btn-primary" %>
+    </div>
+  </div>
+
+
+<%#---------- 右側のコンテンツ ------------#%>
+  <div class="user-show-right-contents">
+  
+  <%# /// ユーザー投稿一覧のコンテンツ選択ボタン /// %>
+    <div class="user-post-selector">
+      <%# /// tweet選択ボタン、パスは仮置き /// %>
+      <%= link_to "Tweet", "#" ,class:"btn btn-primary select-btn" %>
+      
+      <%# /// training選択ボタン、パスは仮置き /// %>
+      <%= link_to "Training", "#" ,class:"btn btn-primary select-btn" %>
+
+      <%# /// meal選択ボタン、パスは仮置き /// %>
+      <%= link_to "Meal", "#" ,class:"btn btn-primary select-btn" %>
+
+      <%# /// process選択ボタン、パスは仮置き /// %>
+      <%= link_to "Process", "#" ,class:"btn btn-primary select-btn" %>
+    </div>
+
+    <%# /// ユーザー投稿一覧表示仮置き /// %>
+    <div class="user-posts-wrapper">
+      <div class="user-posts">1
+        <%# 実際はここにtweet, trainings, meals, processesそれぞれのindexデータが入る
+             デフォルトはtweet? %>
+      </div>
+
+      <div class="user-posts">2
+      </div>
+      <div class="user-posts">3
+      </div>
+      <div class="user-posts">4
+      </div>
+      <div class="user-posts">5
+      </div>
+      <div class="user-posts">6
+      </div>
+      <div class="user-posts">7
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer></footer>
