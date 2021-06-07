@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :tweets, only: [:index, :new, :show, :destroy] do
     resources :tweet_comments, only: [:create]
   end
-  resources :meals, only: [:index, :new, :show, :destroy]
+  resources :meals, only: [:index, :new, :show, :destroy] do
+    resources :meal_comments, only: [:create]
+  end
   resources :trainings, only: [:index, :new, :show, :destroy]
   resources :processes, only: [:index, :new, :show, :destroy]
   resources :records, only: [:index]

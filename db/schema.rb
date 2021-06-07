@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_053614) do
+ActiveRecord::Schema.define(version: 2021_06_07_055652) do
+
+  create_table "meal_comments", charset: "utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "meal_id"
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "meals", charset: "utf8", force: :cascade do |t|
+    t.string "tiile", null: false
+    t.string "text", null: false
+    t.string "image", null: false
+    t.integer "genre_id", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_meals_on_user_id"
+  end
 
   create_table "tweet_comments", charset: "utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -53,5 +72,6 @@ ActiveRecord::Schema.define(version: 2021_06_07_053614) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "meals", "users"
   add_foreign_key "tweets", "users"
 end
