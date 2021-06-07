@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :meals, only: [:index, :new, :show, :destroy] do
     resources :meal_comments, only: [:create]
   end
-  resources :trainings, only: [:index, :new, :show, :destroy]
+  resources :trainings, only: [:index, :new, :show, :destroy] do
+    resources :training_comments, only: [:create]
+  end
   resources :processes, only: [:index, :new, :show, :destroy]
   resources :records, only: [:index]
   resources :in_takes, only: [:new, :show, :destroy]

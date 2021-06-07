@@ -8,5 +8,7 @@ class User < ApplicationRecord
    has_many :tweet_comments
    has_many :meals
    has_many :meal_comments
+   has_many :trainings
+   has_many :training_comments
 
         end

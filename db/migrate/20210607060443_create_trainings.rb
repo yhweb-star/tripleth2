@@ -1,6 +1,6 @@
-class CreateMeals < ActiveRecord::Migration[6.1]
+class CreateTrainings < ActiveRecord::Migration[6.1]
   def change
-    create_table :meals do |t|
+    create_table :trainings do |t|
       t.string :tiile,         null: false
       t.text :text,         null: false
       t.string :image,         null: false
