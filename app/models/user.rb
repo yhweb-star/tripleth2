@@ -10,5 +10,7 @@ class User < ApplicationRecord
    has_many :meal_comments
    has_many :trainings
    has_many :training_comments
+   has_many :successes
+   has_many :success_comments
 
         end
