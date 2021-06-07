@@ -4,6 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :alea
+  belongs_to :gender
+
+  with_options numericality: { other_than: 1 } do
+    validates :alea_id
+    validates :gender_id
+  end
+
    has_many :tweets
    has_many :tweet_comments
    has_many :meals
@@ -13,4 +23,4 @@ class User < ApplicationRecord
    has_many :successes
    has_many :success_comments
 
-        end
+end
