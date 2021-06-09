@@ -22,5 +22,6 @@ class User < ApplicationRecord
    has_many :training_comments
    has_many :successes
    has_many :success_comments
+   has_one_attached :image
 
 end
