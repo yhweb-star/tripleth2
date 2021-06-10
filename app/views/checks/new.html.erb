@@ -1,17 +1,43 @@
 <div class="record-new">
   <div class="record-left">
-    <div class="record-calendar">カレンダー</div>
+    <div class="record-calendar">
+      <%= month_calendar checks: @checks do |date, checks| %>
+        <%= date.day %>
+        <% checks.each do |check| %>
+          <div>
+            <%= check.weight %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     <div class="record-graph">グラフ</div>
   </div>
   <div class="record-right">
     <div class="record-title" >checks</div>
     <div class="record-form">
-      <div class="record-data" >日付</div>
-      <div class="record-menu" >メニュー①</div>
-      <div class="record-menu" >メニュー②</div>
-      <div class="record-menu" >メニュー③</div>
-      <div class="record-menu" >カロリー</div>
-      <div class="record-input" >登録ボタン</div>
+      <%= form_with model: @check, local: true do |form| %>
+        <div class="record-data" >
+          日付<br>
+          <%= raw sprintf(
+            form.datetime_select(
+              :start_time,
+              use_month_numbers: true,
+              date_separator: '%s',
+              datetime_separator: '%s'),
+              '年 ', '月 ' , '日') %>
+        </div>
+        <div class="record-menu" >
+          体重<br>
+          <%= form.text_area :weight %>
+        </div>
+        <div class="record-menu" >
+          画像<br>
+          <%= form.file_field :image %>
+        </div>
+        <div class="record-input" >
+          <%= form.submit "登録" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

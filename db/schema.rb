@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_083551) do
+ActiveRecord::Schema.define(version: 2021_06_10_070803) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 2021_06_08_083551) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "checks", charset: "utf8", force: :cascade do |t|
+    t.integer "weight", null: false
+    t.string "image"
+    t.datetime "start_time", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_checks_on_user_id"
   end
 
   create_table "meal_comments", charset: "utf8", force: :cascade do |t|
@@ -140,6 +150,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_083551) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "checks", "users"
   add_foreign_key "meals", "users"
   add_foreign_key "successes", "users"
   add_foreign_key "trainings", "users"

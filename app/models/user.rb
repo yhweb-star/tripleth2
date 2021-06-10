@@ -14,14 +14,15 @@ class User < ApplicationRecord
     validates :gender_id
   end
 
-   has_many :tweets
-   has_many :tweet_comments
-   has_many :meals
-   has_many :meal_comments
-   has_many :trainings
-   has_many :training_comments
-   has_many :successes
-   has_many :success_comments
-   has_one_attached :image
+  has_many :checks
+  has_many :tweets
+  has_many :tweet_comments
+  has_many :meals
+  has_many :meal_comments
+  has_many :trainings
+  has_many :training_comments
+  has_many :successes
+  has_many :success_comments
+  has_one_attached :image
 
 end

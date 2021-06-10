@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :success_comments, only: [:create]
   end
   resources :records, only: [:index]
-  resources :in_takes, only: [:new, :show, :destroy]
-  resources :out_takes, only: [:new, :show, :destroy]
-  resources :checks, only: [:new, :show, :destroy]
+  resources :in_takes, only: [:index, :new, :show, :destroy]
+  resources :out_takes, only: [:index, :new, :show, :destroy]
+  resources :checks, only: [:index, :new, :show, :destroy]
 end
