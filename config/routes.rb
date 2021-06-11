@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   resources :records, only: [:index]
   resources :in_takes, only: [:index, :new, :show, :destroy]
   resources :out_takes, only: [:index, :new, :show, :destroy]
-  resources :checks, only: [:index, :new, :show, :destroy]
+  resources :checks, only: [:index, :new, :create, :show, :destroy]
 end

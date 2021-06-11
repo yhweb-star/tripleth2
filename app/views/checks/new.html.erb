@@ -10,7 +10,9 @@
         <% end %>
       <% end %>
     </div>
-    <div class="record-graph">グラフ</div>
+    <div class="record-graph">グラフ
+    <%= line_chart @checks.group(:start_time).sum(:weight) %>
+    </div>
   </div>
   <div class="record-right">
     <div class="record-title" >checks</div>

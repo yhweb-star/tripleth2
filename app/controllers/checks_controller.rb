@@ -5,7 +5,7 @@ class ChecksController < ApplicationController
   end
 
   def create
-    Check.create(check_parameter)
+    Check.create(check_params)
     redirect_to checks_path
   end
 
