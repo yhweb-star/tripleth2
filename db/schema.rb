@@ -129,11 +129,11 @@ ActiveRecord::Schema.define(version: 2021_06_10_070803) do
     t.string "encrypted_password", default: "", null: false
     t.string "name", null: false
     t.text "prtext", null: false
-    t.integer "alea_id", null: false
+    t.integer "area_id", null: false
     t.integer "gender_id", null: false
     t.integer "age", null: false
-    t.string "job_style", null: false
-    t.string "exercise_style", null: false
+    t.integer "job_style_id", null: false
+    t.integer "exercise_style_id", null: false
     t.string "icon_image", null: false
     t.integer "height", null: false
     t.integer "weight", null: false

@@ -6,12 +6,24 @@ class User < ApplicationRecord
 
   
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :alea
+  belongs_to :area
   belongs_to :gender
+  belongs_to :job_style
+  belongs_to :exercise_style
 
-  with_options numericality: { other_than: 1 } do
-    validates :alea_id
-    validates :gender_id
+  with_options presence: true do
+    validates :name
+    validates :prtext
+    validates :age
+    validates :height
+    validates :weight
+    validates :goal
+    with_options numericality: { other_than: 1 } do
+      validates :area_id
+      validates :gender_id
+      validates :job_style_id
+      validates :exercise_style_id
+    end
   end
 
   has_many :checks
@@ -23,6 +35,6 @@ class User < ApplicationRecord
   has_many :training_comments
   has_many :successes
   has_many :success_comments
-  has_one_attached :image
+  has_many_attached :images
 
 end
