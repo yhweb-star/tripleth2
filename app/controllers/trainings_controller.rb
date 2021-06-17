@@ -15,7 +15,7 @@ class TrainingsController < ApplicationController
   end
 
   def meal_params
-    params.require(:training).permit(:tiile, :text, :image, :genre_id).merge(user_id: current_user.id)
+    params.require(:training).permit(:title, :text, :image, :genre_id).merge(user_id: current_user.id)
   end
 
 end

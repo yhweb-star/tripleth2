@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2021_06_10_070803) do
 
   create_table "checks", charset: "utf8", force: :cascade do |t|
     t.integer "weight", null: false
-    t.string "image"
     t.datetime "start_time", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -59,9 +58,8 @@ ActiveRecord::Schema.define(version: 2021_06_10_070803) do
   end
 
   create_table "meals", charset: "utf8", force: :cascade do |t|
-    t.string "tiile", null: false
+    t.string "title", null: false
     t.text "text", null: false
-    t.string "image", null: false
     t.integer "genre_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -78,9 +76,8 @@ ActiveRecord::Schema.define(version: 2021_06_10_070803) do
   end
 
   create_table "successes", charset: "utf8", force: :cascade do |t|
-    t.string "tiile", null: false
+    t.string "title", null: false
     t.text "text", null: false
-    t.string "image", null: false
     t.integer "genre_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -97,9 +94,8 @@ ActiveRecord::Schema.define(version: 2021_06_10_070803) do
   end
 
   create_table "trainings", charset: "utf8", force: :cascade do |t|
-    t.string "tiile", null: false
+    t.string "title", null: false
     t.text "text", null: false
-    t.string "image", null: false
     t.integer "genre_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -117,7 +113,6 @@ ActiveRecord::Schema.define(version: 2021_06_10_070803) do
 
   create_table "tweets", charset: "utf8", force: :cascade do |t|
     t.text "text", null: false
-    t.string "image", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

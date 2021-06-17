@@ -4,10 +4,10 @@
 
 <main class="top">
   <ul class="btns">
-    <li><%= link_to 'success' ,"#" , class: "btn-service processbtn" %></li>
-    <li><%= link_to 'training' ,"#" , class: "btn-service trainingbtn" %></li>
-    <li><%= link_to 'tweet' ,"#" , class: "btn-service tweetbtn" %></li>
-    <li><%= link_to 'meal' ,"#" , class: "btn-service mealbtn" %></li>
+    <li><%= link_to 'success' ,successes_path , class: "btn-service processbtn" %></li>
+    <li><%= link_to 'training' ,trainings_path , class: "btn-service trainingbtn" %></li>
+    <li><%= link_to 'tweet' ,tweets_path , class: "btn-service tweetbtn" %></li>
+    <li><%= link_to 'meal' ,meals_path , class: "btn-service mealbtn" %></li>
   </ul>
   <div class="h2 catch-copy">catch copy</div>
   <div class="concept">このアプリはみんなで（with）・共に（both）・健康に（health）をコンセプトに、<br>3つのthを合わせて「今よりも健康になって三倍くらい充実した人生を送りましょう」
@@ -15,8 +15,8 @@
   <ul class="btns">
     <li><%= link_to 'checks' ,new_check_path, class: "btn-service checksbtn" %></li>
     <li><%= link_to 'user' ,user_path(current_user.id), class: "btn-service userbtn" %></li>
-    <li><%= link_to 'in_takes' ,"#" , class: "btn-service in_takesbtn" %></li>
-    <li><%= link_to 'out_takes' ,"#" , class: "btn-service out_takesbtn" %></li>
+    <li><%= link_to 'in_takes' ,new_in_take_path , class: "btn-service in_takesbtn" %></li>
+    <li><%= link_to 'out_takes' ,new_out_take_path , class: "btn-service out_takesbtn" %></li>
   </ul>
 </main>
 <%# ヘッダーファイルの呼び出し %>

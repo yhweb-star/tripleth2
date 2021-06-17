@@ -1,17 +1,17 @@
 <div class='header'>
-  <h1>Processes#show</h1>
+  <h1>successes#show</h1>
 </div>
 <div class='contents'>
   <div class='article'>
     <div class="container">
       <div class="row">
         <div class="col-sm">
-          <%= link_to '一覧に戻る','/processs', class: "btn btn-info back-button" %>
+          <%= link_to '一覧に戻る',successes_path, class: "btn btn-info back-button" %>
         </div>
         <div class="col-sm delete-button">
           <%# if user_signed_in? %>
             <%# if current_user.id == @process.user_id %>
-              <%= link_to '削除','/processs', class: "btn btn-danger", confirm: "削除しますか？" %>
+              <%= link_to '削除',successes_path, class: "btn btn-danger", confirm: "削除しますか？" %>
             <%# end %>
           <%# end %>
         </div>

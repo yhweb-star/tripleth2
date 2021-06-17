@@ -18,26 +18,26 @@
 
     <div class="user-information">
       <%# /// 仮画像 /// %>
-      <%= image_tag @user.icon_image, class:"user-information-image" %>
+      <%= image_tag "148a400f-l.jpeg", class:"user-information-image" %>
       
       <div class="user-inform-texts">
         <%# nickname仮置き %>
-        <p><span>うらやまのボス</span> さんのプロフィール</p>
+        <p><span><%= @user.name %></span> さんのプロフィール</p>
         <p>PR</p>
         <%# PR仮置き %>
-        <p>ちょっとメタボってきたので、、さすがに痩せようと思い四苦八苦からの七転び八起き。春は曙ようよう白くなりゆく山際、ではなくがんばります！</p>
+        <p><%= @user.prtext %></p>
         <%# weight, goal仮置き %>
-        <p>現在体重<span>63</span>kg<i class="fas fa-arrow-right"></i><%#-- 矢印のアイコン --%>
-        目標体重<span>57</span>kg</p>
+        <p>現在体重<span><%= @user.weight %></span>kg<i class="fas fa-arrow-right"></i><%#-- 矢印のアイコン --%>
+        目標体重<span><%= @user.goal %></span>kg</p>
         <%# age / gender / area 仮置き %>
-        <p>40歳 / 男性 / 東京</p>
+        <p><%= @user.age %>才 / <%= @user.gender.name %> / <%= @user.area.name %></p>
       </div>
     </div>
 
     <%# /// records/index遷移ボタン
             パスは仮置き /// %>
     <div class="to-records-index-btn">
-      <%= link_to "ダイエット管理状況", "#" ,class:"btn btn-primary" %>
+      <%= link_to "ダイエット管理状況", records_path ,class:"btn btn-primary" %>
     </div>
   </div>
 
