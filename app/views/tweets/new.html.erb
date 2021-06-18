@@ -2,7 +2,7 @@
 
 
 <%#`````` ヘッダー ```````#%>
-<header></header>
+<%= render "shared/header" %>
 <%#```` 後ほど置き換え ````#%>
 
 
@@ -11,16 +11,23 @@
   <%#----------- 一覧に戻るボタン
     *リンク先仮置き*
     *bootstrap仮置き* -----------#%>
-  <%= link_to "一覧に戻る", "#" ,class:"btn btn-primary back-top-btn" %>
+  <%= link_to "一覧に戻る", tweets_path ,class:"btn btn-primary back-top-btn" %>
 
 
   <%#----------- 記事投稿フォーム 
     ※モデル仮置き※
     ※url仮置き※ --------------#%>
-  <%= form_with model:@hoge, url: "#", class: "tweet-form", local: true do |f| %>
-    <div class="post-tweet-text">
-        <%= f.label :ツイートする, class: "form-label"%>
-        <%= f.text_area :text, autofocus: true, class: "input-box tweet-text-box", placeholder: "今何してる？"%>
+  <%= form_with model:@tweet, url: tweets_path ,class: "processes-form", local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="post-prosecces-title">
+      <%= f.label :画像, class: "form-label"%>
+      <%= f.file_field :image, class: "input-box title-box" %>
+    </div>
+    <div class="post-prosecces-text">
+        <%= f.label :本文, class: "form-label"%>
+        <%= f.text_area :text, class: "input-box text-box", placeholder: "ここに本文を記入"%>
     </div>
 
     <%#--------- 投稿ボタン 

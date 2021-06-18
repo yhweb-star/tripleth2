@@ -1,6 +1,7 @@
 class TweetCommentsController < ApplicationController
   def create
-    TweetComment.create(comment_params)
+    comment = TweetComment.create(comment_params)
+    redirect_to tweet_path(comment.tweet.id)
   end
 
   private
