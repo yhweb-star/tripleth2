@@ -6,44 +6,46 @@
     <div class="container">
       <div class="row">
         <div class="col-sm">
-          <%= link_to '一覧に戻る','/trainings', class: "btn btn-info back-button" %>
+          <%= link_to '一覧に戻る', trainings_path, class: "btn btn-info back-button" %>
         </div>
         <div class="col-sm delete-button">
-          <%# if user_signed_in? %>
-            <%# if current_user.id == @training.user_id %>
-              <%= link_to '削除','/trainings', class: "btn btn-danger", confirm: "削除しますか？" %>
-            <%# end %>
-          <%# end %>
+          <% if user_signed_in? %>
+            <% if current_user.id == @training.user_id %>
+              <%= link_to '削除', training_path(@training.id), method: :delete, class: "btn btn-danger", confirm: "削除しますか？" %>
+            <% end %>
+          <% end %>
         </div>
         <div class="col-sm">
         </div>
       </div>
     </div>
     <div class='training-image'>
-      <%= image_tag "sample.png", class:'training-pict', placeholder: "画像挿入できます" %>
+      <%= image_tag @training.image, class:'training-pict', placeholder: "画像挿入できます" %>
     </div>
     <div class='training-box'>
       <div class='training-content'>
         <div class='training-header'>
-          <%=link_to 'training投稿者', '#', class: 'training-user'%>
+          <%=link_to @training.user.name, user_path(@training.user_id), class: 'training-user'%>
             <%# if training.user.image.attached? %>
               <%#= image_tag training.user.image, class: "icon-pict" %>
             <%# else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
             <%# end %>
-            <div class='training-date'>投稿日時 <%#= l training.created_at %></div>
+            <div class='training-date'><%= @training.created_at.year %>/<%= @training.created_at.month %>/<%= @training.created_at.day %></div>
         </div>
-        <div class='training-title'>Title</div>
-        <div class='training-main'>training</div>
+        <div class='training-title'><%= @training.title %></div>
+        <div class='training-main'><%= @training.text %></div>
       </div>
     </div>
   </div>
   <div class='comment-box'>
     <div class="comment-title">コメント一覧</div>
     <div class="comment-content">
-      <%# @comments.each do |comment| %>
+      <% @comments.each do |comment| %>
         <div class="comment-header">
-          <div class='comment-contributor'><%= link_to 'ユーザー名', "#" %></div>
+          <div class='comment-contributor'>
+            <%= link_to comment.user.name, user_path(comment.user_id) %>
+          </div>
           <div class='comment-contributor-image'>
             <%# if comment.user.image.attached? %>
               <%#= image_tag comment.user.image, class: "icon-pict" %>
@@ -51,18 +53,19 @@
               <%= image_tag 'sample.png', class:"icon-pict" %>
             <%# end %>
           </div>
-          <div class='comment-created-at'>投稿日時 <%#= l comment.created_at %></div>
+          <div class='comment-created-at'>
+            <%= comment.created_at.year %>/<%= comment.created_at.month %>/<%= comment.created_at.day %>
+          </div>
         </div>
-        <p>コメント<%#= simple_format(comment.text) %></p>
-      <%# end %>
+        <p><%= simple_format(comment.text) %></p>
+      <% end %>
     </div>
     <div class="comment-form">
-    <%#= form_with model: [@training, @comment], url: "#", class: "comment-submit", local: true do |f| %>
-      <%#= render 'shared/error_messages', model: f.object %>
-      <%#= f.text_area :text, class: "comment-text", placeholder: "コメントする", rows: "2", required: true %>
-      <input type="text" placeholder="コメントする">
-      <%= link_to '送信', '#', class: "btn btn-info"%>
-    <%# end %>
+    <%= form_with model: [@training, @comment], class: "comment-submit", local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <%= f.text_area :text, class: "comment-text", placeholder: "コメントする", rows: "2", required: true %>
+      <%= f.submit '送信', class: "btn btn-info"%>
+    <% end %>
     </div>
   </div>
 </div>

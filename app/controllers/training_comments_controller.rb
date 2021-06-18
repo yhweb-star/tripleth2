@@ -1,6 +1,7 @@
 class TrainingCommentsController < ApplicationController
   def create
-    TrainingComment.create(comment_params)
+    comment = TrainingComment.create(comment_params)
+    redirect_to training_path(comment.training.id)
   end
 
   private

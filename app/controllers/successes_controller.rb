@@ -28,6 +28,8 @@ class SuccessesController < ApplicationController
     redirect_to successes_path
   end
 
+  private
+
   def success_params
     params.require(:success).permit(:title, :text, :image, :genre_id).merge(user_id: current_user.id)
   end

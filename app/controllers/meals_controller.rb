@@ -28,6 +28,8 @@ class MealsController < ApplicationController
     redirect_to meals_path
   end
 
+  private
+
   def meal_params
     params.require(:meal).permit(:title, :text, :genre_id).merge(user_id: current_user.id)
   end

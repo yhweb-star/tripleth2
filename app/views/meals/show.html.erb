@@ -41,7 +41,8 @@
       <% @comments.each do |comment| %>
         <div class="comment-header">
           <div class='comment-contributor'>
-          <%= link_to comment.user.name, user_path(comment.user_id) %></div>
+            <%= link_to comment.user.name, user_path(comment.user_id) %>
+          </div>
           <div class='comment-contributor-image'>
             <%# if comment.user.image.attached? %>
               <%#= image_tag comment.user.image, class: "icon-pict" %>
