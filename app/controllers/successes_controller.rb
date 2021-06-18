@@ -17,9 +17,15 @@ class SuccessesController < ApplicationController
   end
 
   def show
+    @success = Success.find(params[:id])
+    @comment = SuccessComment.new
+    @comments = @success.success_comments.includes(:user)
   end
 
   def destroy
+    @success = Success.find(params[:id])
+    @success.destroy
+    redirect_to successes_path
   end
 
   def success_params

@@ -7,8 +7,10 @@
 <div class="content">
   <% @successes.each do |success| %>
     <div class="box_content">
-      <%= success.title %>
-      <%= image_tag success.image.variant(resize:'200x200') %>
+      <%= link_to success_path(success.id) do %>
+        <%= success.title %>
+        <%= image_tag success.image.variant(resize:'200x200') %>
+      <% end %>
     </div>
   <% end %>
 </div>
