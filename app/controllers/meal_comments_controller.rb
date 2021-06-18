@@ -1,6 +1,7 @@
 class MealCommentsController < ApplicationController
   def create
-    MealComment.create(comment_params)
+    comment = MealComment.create(comment_params)
+    redirect_to meal_path(comment.meal.id)
   end
 
   private

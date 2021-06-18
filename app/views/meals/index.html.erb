@@ -9,7 +9,7 @@
     <div class="box_content">
       <%= link_to meal_path(meal.id) do %>
         <%= meal.title %>
-        <%= image_tag meal.image.variant(resize:'200x200') %>
+        <%= meal.text %>
       <% end %>
     </div>
   <% end %>

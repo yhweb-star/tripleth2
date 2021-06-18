@@ -6,44 +6,42 @@
     <div class="container">
       <div class="row">
         <div class="col-sm">
-          <%= link_to '一覧に戻る','/meals', class: "btn btn-info back-button" %>
+          <%= link_to '一覧に戻る', meals_path, class: "btn btn-info back-button" %>
         </div>
         <div class="col-sm delete-button">
-          <%# if user_signed_in? %>
-            <%# if current_user.id == @meal.user_id %>
-              <%= link_to '削除','/meals', class: "btn btn-danger", confirm: "削除しますか？" %>
-            <%# end %>
-          <%# end %>
+          <% if user_signed_in? %>
+            <% if current_user.id == @meal.user_id %>
+              <%= link_to '削除', meal_path(@meal.id), method: :delete,class: "btn btn-danger", confirm: "削除しますか？" %>
+            <% end %>
+          <% end %>
         </div>
         <div class="col-sm">
         </div>
       </div>
     </div>
-    <div class='meal-image'>
-      <%= image_tag "sample.png", class:'meal-pict', placeholder: "画像挿入できます" %>
-    </div>
     <div class='meal-box'>
       <div class='meal-content'>
         <div class='meal-header'>
-          <%=link_to 'meal投稿者', '#', class: 'meal-user'%>
+          <%=link_to @meal.user.name, user_path(@meal.user.id), class: 'meal-user'%>
             <%# if meal.user.image.attached? %>
               <%#= image_tag meal.user.image, class: "icon-pict" %>
             <%# else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
             <%# end %>
-            <div class='meal-date'>投稿日時 <%#= l meal.created_at %></div>
+            <div class='meal-date'><%= @meal.created_at.year %>/<%= @meal.created_at.month %>/<%= @meal.created_at.day %></div>
         </div>
-        <div class='meal-title'>Title</div>
-        <div class='meal-main'>meal</div>
+        <div class='meal-title'><%= @meal.title %></div>
+        <div class='meal-main'><%= @meal.text %></div>
       </div>
     </div>
   </div>
   <div class='comment-box'>
     <div class="comment-title">コメント一覧</div>
     <div class="comment-content">
-      <%# @comments.each do |comment| %>
+      <% @comments.each do |comment| %>
         <div class="comment-header">
-          <div class='comment-contributor'><%= link_to 'ユーザー名', "#" %></div>
+          <div class='comment-contributor'>
+          <%= link_to comment.user.name, user_path(comment.user_id) %></div>
           <div class='comment-contributor-image'>
             <%# if comment.user.image.attached? %>
               <%#= image_tag comment.user.image, class: "icon-pict" %>
@@ -51,18 +49,19 @@
               <%= image_tag 'sample.png', class:"icon-pict" %>
             <%# end %>
           </div>
-          <div class='comment-created-at'>投稿日時 <%#= l comment.created_at %></div>
+          <div class='comment-created-at'>
+            <%= comment.created_at.year %>/<%= comment.created_at.month %>/<%= comment.created_at.day %>
+          </div>
         </div>
-        <p>コメント<%#= simple_format(comment.text) %></p>
-      <%# end %>
+        <p><%= simple_format(comment.text) %></p>
+      <% end %>
     </div>
     <div class="comment-form">
-    <%#= form_with model: [@meal, @comment], url: "#", class: "comment-submit", local: true do |f| %>
-      <%#= render 'shared/error_messages', model: f.object %>
-      <%#= f.text_area :text, class: "comment-text", placeholder: "コメントする", rows: "2", required: true %>
-      <input type="text" placeholder="コメントする">
-      <%= link_to '送信', '#', class: "btn btn-info"%>
-    <%# end %>
+    <%= form_with model: [@meal, @comment], class: "comment-submit", local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <%= f.text_area :text, class: "comment-text", placeholder: "コメントする", rows: "2", required: true %>
+      <%= f.submit '送信', class: "btn btn-info"%>
+    <% end %>
     </div>
   </div>
 </div>

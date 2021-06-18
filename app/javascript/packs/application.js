@@ -14,3 +14,5 @@ ActiveStorage.start()
 
 require("chartkick")
 require("chart.js")
+require("trix")
+require("@rails/actiontext")

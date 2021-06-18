@@ -52,7 +52,9 @@
               <%= image_tag 'sample.png', class:"icon-pict" %>
             <%# end %>
           </div>
-          <div class='comment-created-at'><%= comment.created_at.year %>/<%= comment.created_at.month %>/<%= comment.created_at.day %></div>
+          <div class='comment-created-at'>
+            <%= comment.created_at.year %>/<%= comment.created_at.month %>/<%= comment.created_at.day %>
+          </div>
         </div>
         <p><%= simple_format(comment.text) %></p>
       <% end %>
