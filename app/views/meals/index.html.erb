@@ -1,26 +1,21 @@
 <header>
 </header>
 
-<h1>Meals</h1>
-<%# ここにユーザー名表示 %>
-<div class="test">
-userさん
-</div>
+<h1>Meals一覧</h1>
 <center>
 <%# ここから投稿内容表示・仮置きのため一時的に設置 %>
       <div class="content">
-      <div class="box_content">何月何日<br>タイトル<br>投稿内容</div>
-      <div class="box_content">何月何日<br>タイトル<br>投稿内容</div>
-      <div class="box_content">何月何日<br>タイトル<br>投稿内容</div>
-      <div class="box_content">何月何日<br>タイトル<br>投稿内容</div>
-      <div class="box_content">何月何日<br>タイトル<br>投稿内容</div>
-      <div class="box_content">何月何日<br>タイトル<br>投稿内容</div>
-      <div class="box_content">何月何日<br>タイトル<br>投稿内容</div>
-      <div class="box_content">何月何日<br>タイトル<br>投稿内容</div>
-      <div class="box_content">何月何日<br>タイトル<br>投稿内容</div>
-  </div>
-<button type="button" class="btn btn-primary btn-lg">戻る</button>
-<button class="fixed_btn">新規投稿</button>
+  <% @meals.each do |meal| %>
+    <div class="box_content">
+      <%= link_to meal_path(meal.id) do %>
+        <%= meal.title %>
+        <%= image_tag meal.image.variant(resize:'200x200') %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<%= link_to 'ホーム画面に戻る' ,root_path, class: "btn btn-primary btn-lg" %>
+<%= link_to '新規投稿' ,new_meal_path, class: "fixed_btn" %>
 </center>
 <footer>
 </footer>
