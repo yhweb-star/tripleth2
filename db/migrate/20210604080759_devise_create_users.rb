@@ -13,10 +13,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.integer :age,         null: false
       t.integer :job_style_id,     null: false
       t.integer :exercise_style_id,    null: false
-      t.string :icon_image,         null: false
       t.integer :height,         null: false
       t.integer :weight,         null: false
-      t.string :body_image,         null: false
       t.integer :goal,         null: false
 
       ## Recoverable

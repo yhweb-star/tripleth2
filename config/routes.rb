@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit]
   resources :tweets, only: [:index, :new, :create, :show, :destroy] do
     resources :tweet_comments, only: [:create]
+    member do
+      get 'search'
+    end
   end
   resources :meals, only: [:index, :new, :create, :show, :destroy] do
     resources :meal_comments, only: [:create]

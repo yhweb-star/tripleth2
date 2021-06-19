@@ -2,6 +2,7 @@
 <%# ヘッダーファイルの呼び出し %>
 <%= render "shared/header" %>
 
+<% if user_signed_in? %>
 <main class="top">
   <ul class="btns">
     <li><%= link_to 'success' ,successes_path , class: "btn-service processbtn" %></li>
@@ -19,6 +20,19 @@
     <li><%= link_to 'out_takes' ,new_out_take_path , class: "btn-service out_takesbtn" %></li>
   </ul>
 </main>
+<% else %>
+<main class="top">
+  <ul class="btns">
+    <li><%= link_to 'success' ,successes_path , class: "btn-service processbtn" %></li>
+    <li><%= link_to 'training' ,trainings_path , class: "btn-service trainingbtn" %></li>
+    <li><%= link_to 'tweet' ,tweets_path , class: "btn-service tweetbtn" %></li>
+    <li><%= link_to 'meal' ,meals_path , class: "btn-service mealbtn" %></li>
+  </ul>
+  <div class="h2 catch-copy">catch copy</div>
+  <div class="concept">このアプリはみんなで（with）・共に（both）・健康に（health）をコンセプトに、<br>3つのthを合わせて「今よりも健康になって三倍くらい充実した人生を送りましょう」
+  <br>と言う願いを込めて作られました。<br>あなたの健康のお役に立つことを願っております。</div>
+</main>
+<% end %>
 <%# ヘッダーファイルの呼び出し %>
 <%= render "shared/footer" %>
 </main>

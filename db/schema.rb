@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 2021_06_18_033315) do
 
   create_table "successes", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.text "text", null: false
     t.integer "genre_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -104,7 +103,6 @@ ActiveRecord::Schema.define(version: 2021_06_18_033315) do
 
   create_table "trainings", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.text "text", null: false
     t.integer "genre_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -138,10 +136,8 @@ ActiveRecord::Schema.define(version: 2021_06_18_033315) do
     t.integer "age", null: false
     t.integer "job_style_id", null: false
     t.integer "exercise_style_id", null: false
-    t.string "icon_image", null: false
     t.integer "height", null: false
     t.integer "weight", null: false
-    t.string "body_image", null: false
     t.integer "goal", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

@@ -2,6 +2,7 @@ class Success < ApplicationRecord
   belongs_to :user
   has_many :success_comments
   has_one_attached :image
+  has_rich_text :text
 
   with_options presence: true do
     validates :title

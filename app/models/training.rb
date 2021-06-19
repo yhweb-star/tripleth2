@@ -2,6 +2,7 @@ class Training < ApplicationRecord
   belongs_to :user
   has_many :training_comments
   has_one_attached :image
+  has_rich_text :text
 
   with_options presence: true do
     validates :title

@@ -4,9 +4,9 @@
 <h1>Tweets一覧</h1>
 <center>
     <%# 検索フォームを設置 %>
-    <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
-    <input type="text" class="col-form-control" placeholder="ツイートを検索">
-    <%= form.submit "検索", class: "search-btn" %>
+    <%= form_with url: search_tweet_path(@tweets.ids), local: true, method: :get, class: "search-form" do |form| %>
+      <%= form.text_field :keyword, class: "col-form-control", placeholder: "ツイートを検索" %>
+      <%= form.submit "検索", class: "search-btn" %>
     <% end %>
     <br>
     <%# ここから投稿内容表示・仮置きのため一時的に設置 %>
@@ -14,7 +14,7 @@
   <% @tweets.each do |tweet| %>
     <div class="box_content">
       <%= link_to tweet_path(tweet.id) do %>
-        <%= tweet.text %>
+        <%= tweet.text.truncate(20) %>
         <%= image_tag tweet.image.variant(resize:'200x200') %>
       <% end %>
     </div>

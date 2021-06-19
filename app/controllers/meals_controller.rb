@@ -31,7 +31,7 @@ class MealsController < ApplicationController
   private
 
   def meal_params
-    params.require(:meal).permit(:title, :text, :genre_id).merge(user_id: current_user.id)
+    params.require(:meal).permit(:title, :text, :image, :genre_id).merge(user_id: current_user.id)
   end
 
 end
