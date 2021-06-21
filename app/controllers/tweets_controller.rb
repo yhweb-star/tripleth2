@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -28,9 +28,9 @@ class TweetsController < ApplicationController
     redirect_to tweets_path
   end
 
-  def search
-    @tweets = Tweet.search(params[:keyword])
-  end
+#  def search
+#    @tweets = Tweet.search(params[:keyword])
+#  end
 
   private
 
