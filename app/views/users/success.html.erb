@@ -62,10 +62,10 @@
 
     <%# /// ユーザー投稿一覧表示仮置き /// %>
     <div class="user-posts-wrapper">
-      <% @instances.each do |instance| %>
+      <% @successes.each do |success| %>
         <div class="user-posts">
-          <%= instance.text %>
-          <%= image_tag instance.image.variant(resize:'200x200') %>
+          <%= success.text %>
+          <%= image_tag success.image.variant(resize:'200x200') %>
         </div>
       <% end %>
     </div>

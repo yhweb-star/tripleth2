@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'homes#index'
-  resources :users, only: [:show, :edit]
+  resources :users, only: [:show, :edit] do
+    member do
+      get :tweet
+      get :meal
+      get :training
+      get :success
+    end
+  end
   resources :tweets, only: [:index, :new, :create, :show, :destroy] do
     resources :tweet_comments, only: [:create]
     member do
-      get 'search'
+      get :search
     end
   end
   resources :meals, only: [:index, :new, :create, :show, :destroy] do
