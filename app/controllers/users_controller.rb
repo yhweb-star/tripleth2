@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @tweets = @user.tweets
+    @meals = @user.meals
+    @trainings = @user.trainings
+    @successes = @user.successes
+
+    #@instances = (@tweets + @meals + @trainings + @successes).sort_by {|record| record.created_at}.reverse!
+
+    @instances = @tweets | @meals | @trainings | @successes
+    @instances.sort!{ |a, b| b.created_at <=> a.created_at }
   end
 
   def edit

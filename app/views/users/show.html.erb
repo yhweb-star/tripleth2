@@ -62,10 +62,12 @@
 
     <%# /// ユーザー投稿一覧表示仮置き /// %>
     <div class="user-posts-wrapper">
-      <div class="user-posts">1
-        <%# 実際はここにtweet, trainings, meals, processesそれぞれのindexデータが入る
-             デフォルトはtweet? %>
+        <% @instances.each do |instance| %>
+      <div class="user-posts">
+          <%= instance.text %>
+          <%= image_tag instance.image.variant(resize:'200x200') %>
       </div>
+        <% end %>
 
       <div class="user-posts">2
       </div>
