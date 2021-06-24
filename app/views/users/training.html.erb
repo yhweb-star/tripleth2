@@ -18,19 +18,19 @@
 
     <div class="user-information">
       <%# /// 仮画像 /// %>
-      <%= image_tag "148a400f-l.jpeg", class:"user-information-image" %>
+      <% if @user.person.avatar.attached? %>
+        <%= image_tag @user.person.avatar, class:"user-information-image" %>
+      <% else %>
+        <%= image_tag "148a400f-l.jpeg", class:"user-information-image" %>
+      <% end %>
       
       <div class="user-inform-texts">
-        <%# nickname仮置き %>
         <p><span><%= @user.name %></span> さんのプロフィール</p>
         <p>PR</p>
-        <%# PR仮置き %>
-        <p><%= @user.prtext %></p>
-        <%# weight, goal仮置き %>
-        <p>現在体重<span><%= @user.weight %></span>kg<i class="fas fa-arrow-right"></i><%#-- 矢印のアイコン --%>
-        目標体重<span><%= @user.goal %></span>kg</p>
-        <%# age / gender / area 仮置き %>
-        <p><%= @user.age %>才 / <%= @user.gender.name %> / <%= @user.area.name %></p>
+        <p><%= @user.chara.text %></p>
+        <p>現在体重<span><%= @user.person.weight %></span>kg<i class="fas fa-arrow-right"></i><%#-- 矢印のアイコン --%>
+        目標体重<span><%= @user.person.goal %></span>kg</p>
+        <p><%= @user.chara.age %>才 / <%= @user_area.name %> / <%= @user_gender.name %></p>
       </div>
     </div>
 
