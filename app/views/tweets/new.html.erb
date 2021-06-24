@@ -22,6 +22,10 @@
   <%= render 'shared/error_messages', model: f.object %>
 
     <div class="post-prosecces-title">
+      <%= f.label :タイトル, class: "form-label"%>
+      <%= f.text_field :title, autofocus: true, class: "input-box title-box", placeholder: "タイトルを記入"%>
+    </div>
+    <div class="post-prosecces-title">
       <%= f.label :画像, class: "form-label"%>
       <%= f.file_field :image, class: "input-box title-box" %>
     </div>

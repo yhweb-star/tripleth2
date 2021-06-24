@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 2021_06_18_033315) do
   end
 
   create_table "tweets", charset: "utf8", force: :cascade do |t|
+    t.string "title", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

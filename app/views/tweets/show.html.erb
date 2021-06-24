@@ -2,6 +2,7 @@
 <%= render "shared/header" %>
 <%# / ヘッダー %>
 
+<%# tweet内容表示 %>
 <div class='contents'>
   <div class='article'>
     <div class="container">
@@ -27,18 +28,20 @@
       <div class='tweet-content'>
         <div class='tweet-header'>
           <%=link_to @tweet.user.name, user_path(@tweet.user_id), class: 'tweet-user'%>
-            <%# if tweet.user.image.attached? %>
-              <%#= image_tag tweet.user.image, class: "icon-pict" %>
-            <%# else %>
+            <% if @tweet.user.images.attached? %>
+              <%= image_tag @tweet.user.images, class: "icon-pict" %>
+            <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
-            <%# end %>
+            <% end %>
             <div class='tweet-date'><%= @tweet.created_at.year %>/<%= @tweet.created_at.month %>/<%= @tweet.created_at.day %></div>
         </div>
+        <div class='training-title'><%= @tweet.title %></div>
         <div class='tweet-main'><%= @tweet.text %></div>
       </div>
     </div>
   </div>
 <%# / tweet内容表示 %>
+
 <%# コメント欄表示 %>
   <div class='comment-box'>
     <div class="comment-title">コメント一覧</div>
@@ -70,4 +73,6 @@
     </div>
   </div>
 </div>
+<%# / コメント欄表示 %>
+
 <div class='footer'></div>

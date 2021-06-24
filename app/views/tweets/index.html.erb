@@ -14,7 +14,7 @@
   <% @tweets.each do |tweet| %>
     <div class="box_content">
       <%= link_to tweet_path(tweet.id) do %>
-        <%= tweet.text %>
+        <%= tweet.title.truncate(13) %>
         <%= image_tag tweet.image.variant(resize:'200x200') %>
       <% end %>
     </div>

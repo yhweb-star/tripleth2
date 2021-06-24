@@ -1,6 +1,7 @@
-<div class='header'>
-  <h1>Trainings#show</h1>
-</div>
+<%# ヘッダー  %>
+<%= render "shared/header" %>
+<%# / ヘッダー %>
+
 <div class='contents'>
   <div class='article'>
     <div class="container">
@@ -26,11 +27,11 @@
       <div class='training-content'>
         <div class='training-header'>
           <%=link_to @training.user.name, user_path(@training.user_id), class: 'training-user'%>
-            <%# if training.user.image.attached? %>
-              <%#= image_tag training.user.image, class: "icon-pict" %>
-            <%# else %>
+            <% if @training.user.images.attached? %>
+              <%= image_tag @training.user.images, class: "icon-pict" %>
+            <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
-            <%# end %>
+            <% end %>
             <div class='training-date'><%= @training.created_at.year %>/<%= @training.created_at.month %>/<%= @training.created_at.day %></div>
         </div>
         <div class='training-title'><%= @training.title %></div>

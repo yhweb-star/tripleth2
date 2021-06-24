@@ -5,6 +5,7 @@ class Tweet < ApplicationRecord
   has_rich_text :text
 
   with_options presence: true do
+    validates :title
     validates :text
     validates :image
   end
