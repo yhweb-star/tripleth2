@@ -13,20 +13,20 @@
   </div>
 
   <%# エラー文が出るように、部分テンプレートを呼び出し %>
-  <%= render 'shared/error_messages', model: f.object %>
+  <%= render "devise/shared/error_messages", resource: @user %> 
 
-  <%# /新規登録の際入力する値 %>
+  <%# 新規登録の際、入力する値 %>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ニックネーム</label>
     </div>
-    <%= f.text_area :name, class:"input-default", id:"name", placeholder:"例) tripleth太郎", maxlength:"40" %>
+    <%= f.text_area :name, class:"input-default", id:"nickname", placeholder:"例) tripleth太郎", maxlength:"40", autofocus: true %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
     </div>
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -41,125 +41,11 @@
     </div>
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
-<%# 1ページ目ボタン %>
+  <%# 会員登録ボタン %>
   <div class='register-btn'>
-    <%# 会員登録ボタン %>
-    <%#= f.submit "次へ" ,class:"register-red-btn" %>
-  </div>
-<%# 1ページ目ボタン %>
-</div>
-<%# end %>
-
-
-
-
-<%# 2ページ目 %>
-<%#= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-<%# 2ページ目 %>
-
-<div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      会員情報入力
-    </h1>
-  </div>
-
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">自己紹介</label>
-    </div>
-    <%= f.text_area :prtext, class:"input-default", id:"prtext", placeholder:"例) 目標は5kg減量！", maxlength:"40" %>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      都道府県
-    </div>
-    <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      性別
-    </div>
-    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      年齢
-    </div>
-    <%= f.text_area :age, class:"input-default", id:"age", placeholder:"半角数字で入力", maxlength:"2" %>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      仕事のスタイル
-    </div>
-    <%= f.collection_select(:job_style_id, JobStyle.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      日常の運動量
-    </div>
-    <%= f.collection_select(:exercise_style_id, ExerciseStyle.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      アイコン写真
-    </div>
-    <div class="click-upload">
-      <%= f.file_field :image, id:"item-image" %>
-    </div>
-  </div>
-<%# 2ページ目ボタン %>
-  <div class='register-btn'>
-    <%# 会員登録ボタン %>
-    <%#= f.submit "次へ" ,class:"register-red-btn" %>
-  </div>
-<%# 2ページ目ボタン %>
-</div>
-<%# end %>
-
-
-
-
-<%# 3ページ目 %>
-<%#= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-<%# 3ページ目 %>
-
-<div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      会員情報入力
-    </h1>
-  </div>
-  
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">身長</label>
-    </div>
-    <%= f.text_area :height, class:"input-default", id:"height", placeholder:"例) 170", maxlength:"40" %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">体重</label>
-    </div>
-    <%= f.text_area :weight, class:"input-default", id:"weight", placeholder:"例) 65", maxlength:"40" %>
-  </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">目標体重</label>
-    </div>
-    <%= f.text_area :goal, class:"input-default", id:"goal", placeholder:"例) 60", maxlength:"40" %>
-  </div>
-  <div class="form-group">
-    <div class="form-text-wrap">
-      現在の状態写真
-    </div>
-    <div class="click-upload">
-      <%= f.file_field :image, id:"item-image" %>
-    </div>
-  </div>
-  <div class='register-btn'>
-    <%# 会員登録ボタン %>
-    <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    <%= f.submit "次へ(2/3)" ,class:"register-red-btn" %>
   </div>
 </div>
 <% end %>
+
+<%= render "devise/shared/links" %>

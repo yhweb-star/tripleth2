@@ -1,6 +1,8 @@
-<div class='header'>
-  <h1>Meals#show</h1>
-</div>
+<%# ヘッダー  %>
+<%= render "shared/header" %>
+<%# / ヘッダー %>
+
+<%# meal内容表示 %>
 <div class='contents'>
   <div class='article'>
     <div class="container">
@@ -26,11 +28,11 @@
       <div class='meal-content'>
         <div class='meal-header'>
           <%=link_to @meal.user.name, user_path(@meal.user.id), class: 'meal-user'%>
-            <%# if meal.user.image.attached? %>
-              <%#= image_tag meal.user.image, class: "icon-pict" %>
-            <%# else %>
+            <% if @meal.user.person.avatar.attached? %>
+              <%= image_tag @meal.user.person.avatar, class: "icon-pict" %>
+            <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
-            <%# end %>
+            <% end %>
             <div class='meal-date'><%= @meal.created_at.year %>/<%= @meal.created_at.month %>/<%= @meal.created_at.day %></div>
         </div>
         <div class='meal-title'><%= @meal.title %></div>
@@ -38,6 +40,9 @@
       </div>
     </div>
   </div>
+<%# / meal内容表示 %>
+
+<%# コメント欄表示 %>
   <div class='comment-box'>
     <div class="comment-title">コメント一覧</div>
     <div class="comment-content">
@@ -47,11 +52,11 @@
             <%= link_to comment.user.name, user_path(comment.user_id) %>
           </div>
           <div class='comment-contributor-image'>
-            <%# if comment.user.image.attached? %>
-              <%#= image_tag comment.user.image, class: "icon-pict" %>
-            <%# else %>
+            <% if comment.user.person.avatar.attached? %>
+              <%= image_tag comment.user.person.avatar, class: "icon-pict" %>
+            <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
-            <%# end %>
+            <% end %>
           </div>
           <div class='comment-created-at'>
             <%= comment.created_at.year %>/<%= comment.created_at.month %>/<%= comment.created_at.day %>
@@ -69,4 +74,6 @@
     </div>
   </div>
 </div>
+<%# / コメント欄表示 %>
+
 <div class='footer'></div>

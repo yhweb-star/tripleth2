@@ -2,6 +2,7 @@
 <%= render "shared/header" %>
 <%# / ヘッダー %>
 
+<%# training内容表示 %>
 <div class='contents'>
   <div class='article'>
     <div class="container">
@@ -27,8 +28,8 @@
       <div class='training-content'>
         <div class='training-header'>
           <%=link_to @training.user.name, user_path(@training.user_id), class: 'training-user'%>
-            <% if @training.user.images.attached? %>
-              <%= image_tag @training.user.images, class: "icon-pict" %>
+            <% if @training.user.person.avatar.attached? %>
+              <%= image_tag @training.user.person.avatar, class: "icon-pict" %>
             <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
             <% end %>
@@ -39,6 +40,9 @@
       </div>
     </div>
   </div>
+<%# / training内容表示 %>
+
+<%# コメント欄表示 %>
   <div class='comment-box'>
     <div class="comment-title">コメント一覧</div>
     <div class="comment-content">
@@ -48,11 +52,11 @@
             <%= link_to comment.user.name, user_path(comment.user_id) %>
           </div>
           <div class='comment-contributor-image'>
-            <%# if comment.user.image.attached? %>
-              <%#= image_tag comment.user.image, class: "icon-pict" %>
-            <%# else %>
+            <% if comment.user.person.avatar.attached? %>
+              <%= image_tag comment.user.person.avatar, class: "icon-pict" %>
+            <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
-            <%# end %>
+            <% end %>
           </div>
           <div class='comment-created-at'>
             <%= comment.created_at.year %>/<%= comment.created_at.month %>/<%= comment.created_at.day %>
@@ -70,4 +74,6 @@
     </div>
   </div>
 </div>
+<%# / コメント欄表示 %>
+
 <div class='footer'></div>

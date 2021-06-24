@@ -1,6 +1,8 @@
-<div class='header'>
-  <h1>successes#show</h1>
-</div>
+<%# ヘッダー  %>
+<%= render "shared/header" %>
+<%# / ヘッダー %>
+
+<%# success内容表示 %>
 <div class='contents'>
   <div class='article'>
     <div class="container">
@@ -26,11 +28,11 @@
       <div class='process-content'>
         <div class='process-header'>
           <%=link_to @success.user.name, user_path(@success.user_id), class: 'process-user'%>
-            <%# if process.user.image.attached? %>
-              <%#= image_tag process.user.image, class: "icon-pict" %>
-            <%# else %>
+            <% if @success.user.person.avatar.attached? %>
+              <%= image_tag @success.user.person.avatar, class: "icon-pict" %>
+            <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
-            <%# end %>
+            <% end %>
             <div class='process-date'><%= @success.created_at.year %>/<%= @success.created_at.month %>/<%= @success.created_at.day %></div>
         </div>
         <div class='process-title'><%= @success.title %></div>
@@ -38,6 +40,9 @@
       </div>
     </div>
   </div>
+<%# / success内容表示 %>
+
+<%# コメント欄表示 %>
   <div class='comment-box'>
     <div class="comment-title">コメント一覧</div>
     <div class="comment-content">
@@ -46,11 +51,11 @@
           <div class='comment-contributor'>
             <%= link_to comment.user.name, user_path(comment.user_id) %></div>
           <div class='comment-contributor-image'>
-            <%# if comment.user.image.attached? %>
-              <%#= image_tag comment.user.image, class: "icon-pict" %>
-            <%# else %>
+            <% if comment.user.person.avatar.attached? %>
+              <%= image_tag comment.user.person.avatar, class: "icon-pict" %>
+            <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
-            <%# end %>
+            <% end %>
           </div>
           <div class='comment-created-at'>
             <%= comment.created_at.year %>/<%= comment.created_at.month %>/<%= comment.created_at.day %>
@@ -68,4 +73,6 @@
     </div>
   </div>
 </div>
+<%# / コメント欄表示 %>
+
 <div class='footer'></div>

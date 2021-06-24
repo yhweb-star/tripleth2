@@ -28,8 +28,8 @@
       <div class='tweet-content'>
         <div class='tweet-header'>
           <%=link_to @tweet.user.name, user_path(@tweet.user_id), class: 'tweet-user'%>
-            <% if @tweet.user.images.attached? %>
-              <%= image_tag @tweet.user.images, class: "icon-pict" %>
+            <% if @tweet.user.person.avatar.attached? %>
+              <%= image_tag @tweet.user.person.avatar, class: "icon-pict" %>
             <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
             <% end %>
@@ -51,11 +51,11 @@
           <div class='comment-contributor'>
             <%= link_to comment.user.name, user_path(comment.user_id) %></div>
           <div class='comment-contributor-image'>
-            <%# if comment.user.image.attached? %>
-              <%#= image_tag comment.user.image, class: "icon-pict" %>
-            <%# else %>
+            <% if comment.user.person.avatar.attached? %>
+              <%= image_tag comment.user.person.avatar, class: "icon-pict" %>
+            <% else %>
               <%= image_tag 'sample.png', class:"icon-pict" %>
-            <%# end %>
+            <% end %>
           </div>
           <div class='comment-created-at'>
             <%= comment.created_at.year %>/<%= comment.created_at.month %>/<%= comment.created_at.day %>
