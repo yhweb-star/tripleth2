@@ -1,0 +1,35 @@
+<%# 左側のコンテンツ #%>
+  <div class="user-show-left-contents">
+
+<%# users/edit遷移ボタン %>
+    <div class="to-user-edit-btn">
+      <%= link_to "編集する", edit_user_path(current_user.id) ,class:"btn btn-primary" %>
+    </div>
+<%# / users/edit遷移ボタン %>
+
+<%# user情報 #%>
+    <div class="user-information">
+      <% if @user.person.avatar.attached? %>
+        <%= image_tag @user.person.avatar, class:"user-information-image" %>
+      <% else %>
+        <%= image_tag "148a400f-l.jpeg", class:"user-information-image" %>
+      <% end %>
+      
+      <div class="user-inform-texts">
+        <p><span><%= @user.name %></span> さんのプロフィール</p>
+        <p>PR</p>
+        <p><%= @user.chara.text %></p>
+        <p>現在体重<span><%= @user.person.weight %></span>kg<i class="fas fa-arrow-right"></i><%#-- 矢印のアイコン --%>
+        目標体重<span><%= @user.person.goal %></span>kg</p>
+        <p><%= @user.chara.age %>才 / <%= @user_area.name %> / <%= @user_gender.name %></p>
+      </div>
+    </div>
+<%# / user情報 #%>
+
+<%# records/index遷移ボタン %>
+    <div class="to-records-index-btn">
+      <%= link_to "ダイエット管理状況", records_path ,class:"btn btn-primary" %>
+    </div>
+<%# / records/index遷移ボタン %>
+  </div>
+<%# / 左側のコンテンツ #%>
