@@ -1,23 +1,22 @@
-<%###.*_*.### トレーニング記事新規投稿ページ ###.*_*.###%>
-
 <%# Font Awesomeの読み込み %>
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
-<%#`````` ヘッダー ```````#%>
-<header></header>
-<%#```` 後ほど置き換え ````#%>
+<%# ヘッダー  %>
+<%= render "shared/header" %>
+<%# / ヘッダー %>
 
 <div class="user-show-wrapper">
-<%#---------- 左側のコンテンツ ------------#%>
+<%# 左側のコンテンツ #%>
   <div class="user-show-left-contents">
-  <%# /// users/edit遷移ボタン
-          パスは仮置き /// %>
+
+<%# users/edit遷移ボタン %>
     <div class="to-user-edit-btn">
       <%= link_to "編集する", edit_user_path(current_user.id) ,class:"btn btn-primary" %>
     </div>
+<%# / users/edit遷移ボタン %>
 
+<%# user情報 #%>
     <div class="user-information">
-      <%# /// 仮画像 /// %>
       <% if @user.person.avatar.attached? %>
         <%= image_tag @user.person.avatar, class:"user-information-image" %>
       <% else %>
@@ -25,41 +24,38 @@
       <% end %>
       
       <div class="user-inform-texts">
-        <%# nickname仮置き %>
         <p><span><%= @user.name %></span> さんのプロフィール</p>
         <p>PR</p>
-        <%# PR仮置き %>
         <p><%= @user.chara.text %></p>
-        <%# weight, goal仮置き %>
         <p>現在体重<span><%= @user.person.weight %></span>kg<i class="fas fa-arrow-right"></i><%#-- 矢印のアイコン --%>
         目標体重<span><%= @user.person.goal %></span>kg</p>
-        <%# age / gender / area 仮置き %>
         <p><%= @user.chara.age %>才 / <%= @user_area.name %> / <%= @user_gender.name %></p>
       </div>
     </div>
+<%# / user情報 #%>
 
-    <%# /// records/index遷移ボタン
-            パスは仮置き /// %>
+<%# records/index遷移ボタン %>
     <div class="to-records-index-btn">
       <%= link_to "ダイエット管理状況", records_path ,class:"btn btn-primary" %>
     </div>
+<%# / records/index遷移ボタン %>
   </div>
+<%# / 左側のコンテンツ #%>
 
 
-<%#---------- 右側のコンテンツ ------------#%>
+<%# 右側のコンテンツ #%>
   <div class="user-show-right-contents">
   
-  <%# /// ユーザー投稿一覧のコンテンツ選択ボタン /// %>
+<%# ユーザー投稿一覧のコンテンツ選択ボタン %>
     <div class="user-post-selector">
       <%= link_to "Tweet", tweet_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
-      
       <%= link_to "Training", training_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
-
       <%= link_to "Meal", meal_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
-
       <%= link_to "Success", success_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
     </div>
+<%# / ユーザー投稿一覧のコンテンツ選択ボタン %>
 
+<%# ユーザー投稿tweet一覧 %>
     <div class="user-posts-wrapper">
       <% @tweets.each do |tweet| %>
         <div class="user-posts">
@@ -70,10 +66,11 @@
         </div>
       <% end %>
     </div>
-
+<%# / ユーザー投稿tweet一覧 %>
   </div>
+<%# / 右側のコンテンツ #%>
 </div>
 
-
-
-<footer></footer>
+<%# フッター  %>
+<%= render "shared/footer" %>
+<%# / フッター %>
