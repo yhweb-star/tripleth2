@@ -17,7 +17,8 @@
       <% end %>
     </div>
     <div class="record-graph">グラフ
-    <%= line_chart @checks.group(:start_time).sum(:weight) %>
+    <p id="notice"><%= notice %></p>
+    <%= line_chart @checks.group(:start_time).sum(:weight), id: "column-chart", width: "800px", height: "500px" %>
     </div>
   </div>
   <div class="record-right">
