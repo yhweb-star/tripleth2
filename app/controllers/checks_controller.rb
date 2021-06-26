@@ -6,7 +6,7 @@ class ChecksController < ApplicationController
 
   def create
     Check.create(check_params)
-    redirect_to checks_path
+    redirect_to new_check_path
   end
 
   def show
@@ -14,6 +14,7 @@ class ChecksController < ApplicationController
 
   def destroy
   end
+
 
   private
 

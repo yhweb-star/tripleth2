@@ -16,7 +16,7 @@
   
 <%# ユーザー投稿一覧のコンテンツ選択ボタン %>
     <div class="user-post-selector">
-      <%= link_to "Tweet", tweet_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
+      <%= link_to "Tweet", user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
       <%= link_to "Training", training_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
       <%= link_to "Meal", meal_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
       <%= link_to "Success", success_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>

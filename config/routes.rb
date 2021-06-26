@@ -8,10 +8,9 @@ Rails.application.routes.draw do
     get 'people', to: 'users/registrations#new_person'
     post 'people', to: 'users/registrations#create_person'
   end
-  
+
   resources :users, only: [:show, :edit] do
     member do
-      get :tweet
       get :meal
       get :training
       get :success

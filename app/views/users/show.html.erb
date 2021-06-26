@@ -16,7 +16,7 @@
   
 <%# ユーザー投稿一覧のコンテンツ選択ボタン %>
     <div class="user-post-selector">
-      <%= link_to "Tweet", tweet_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
+      <%= link_to "Tweet", user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
       <%= link_to "Training", training_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
       <%= link_to "Meal", meal_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
       <%= link_to "Success", success_user_path(current_user.id) ,class:"btn btn-primary select-btn" %>
@@ -25,10 +25,12 @@
 
 <%# ユーザー投稿一覧 %>
     <div class="user-posts-wrapper">
-      <% @instances.each do |instance| %>
+      <% @tweets.each do |tweet| %>
         <div class="user-posts">
-          <%= instance.title.truncate(13) %>
-          <%= image_tag instance.image.variant(resize:'200x200') %>
+          <%= link_to tweet_path(tweet.id) do %>
+            <%= tweet.title.truncate(13) %>
+            <%= image_tag tweet.image.variant(resize:'200x200') %>
+          <% end %>
         </div>
       <% end %>
     </div>

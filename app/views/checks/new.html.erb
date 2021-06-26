@@ -1,3 +1,7 @@
+<%# ヘッダー  %>
+<%= render "shared/header" %>
+<%# / ヘッダー %>
+
 <div class="record-new">
   <div class="record-left">
     <div class="record-calendar">
@@ -5,7 +9,9 @@
         <%= date.day %>
         <% checks.each do |check| %>
           <div>
-            <%= check.weight %>
+            <%= link_to check_path(check.id) do %>
+              <%= check.weight %>
+            <% end %>
           </div>
         <% end %>
       <% end %>
@@ -30,7 +36,7 @@
         </div>
         <div class="record-menu" >
           体重<br>
-          <%= form.text_area :weight %>
+          <%= form.text_field :weight %>
         </div>
         <div class="record-menu" >
           画像<br>
@@ -43,3 +49,6 @@
     </div>
   </div>
 </div>
+<%# フッター  %>
+<%= render "shared/footer" %>
+<%# / フッター %>
